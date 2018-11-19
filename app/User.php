@@ -6,17 +6,24 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use App\Rol;
+
 class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    protected $table="Usuarios";
+
+    protected $primaryKey = 'id';
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'email',
+        'password',
+        'nombre',
+        'apellido',
+        'cedula',
+        'rif',
+        'direccion',
     ];
 
     /**
@@ -27,4 +34,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function rol(){
+      return $this->belongsTo('App\Rol','Rol_id');
+    }
+
+    public function servicio(){
+      return $this->hasMany('App\Servicios','Usuario_id','id');
+    }
 }

@@ -26,8 +26,8 @@
 
 
     <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    {{-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> --}}
+    {{-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'> --}}
     <link href="{{ asset('css/pe-icon-7-stroke.css') }}" rel="stylesheet" />
 
 </head>
@@ -63,7 +63,7 @@
           </a>
         </li>
         <li>
-          <a href="typography.html">
+          <a href="#">
             <i class="pe-7s-phone"></i>
             <p>Servicio de Telefonia</p>
           </a>
@@ -117,11 +117,11 @@
           </ul> --}}
 
           <ul class="nav navbar-nav navbar-right">
-            <li>
+            {{-- <li>
               <a href="">
                 <p>Perfil</p>
               </a>
-            </li>
+            </li> --}}
             {{-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <p>
@@ -140,9 +140,9 @@
               </ul>
             </li> --}}
             <li>
-              <a href="#">
-                <p>Log out</p>
-              </a>
+							<form id="logout-form" action="{{ route('logout') }}" method="POST">{{ csrf_field() }}
+							<button type="submit" class="btn btn-default btn-flat">Salir</button>
+							</form>
             </li>
             <li class="separator hidden-lg"></li>
           </ul>
@@ -150,7 +150,8 @@
       </div>
     </nav>
     <div class="content">
-      <div class="container-fluid">
+			@yield('content')
+      {{-- <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -175,7 +176,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
     <footer class="footer">
       <div class="container-fluid">
@@ -208,13 +209,13 @@
 <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
 
 <!--  Charts Plugin -->
-<script src="{{asset('js/chartist.min.js')}}"></script>
+{{-- <script src="{{asset('js/chartist.min.js')}}"></script> --}}
 
 <!--  Notifications Plugin    -->
 <script src="{{asset('js/bootstrap-notify.js')}}"></script>
 
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+{{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
 
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="{{asset('js/light-bootstrap-dashboard.js?v=1.4.0')}}"></script>
@@ -223,16 +224,7 @@
 <script src="{{asset('js/demo.js')}}"></script>
 
 <script type="text/javascript">
-  $(document).ready(function(){
-    demo.initChartist();
-    $.notify({
-      icon: 'pe-7s-gift',
-      message: "Bienvenido al administrador de Calble Unet"
-    },{
-      type: 'info',
-      timer: 4000
-    });
-  });
+
 </script>
 
 </html>
