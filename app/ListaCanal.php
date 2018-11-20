@@ -14,7 +14,7 @@ class ListaCanal extends Model
   protected $primaryKey = 'id';
 
   public function planCanal(){
-    return $this->belongsTo('App\PlanCanal','PlanCanales_id');
+    return $this->hasMany('App\PlanCanal','ListaCanales_id','id');
   }
 
   public function canal(){
