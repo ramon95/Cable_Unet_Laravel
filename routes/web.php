@@ -43,6 +43,29 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'CanalController@borrar',
     'as'    =>  'canalBorrar'
   ]);
+  /////////////////////////////////////////////////////////////////////////Canales//////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Rutas de servicio de cable
+  // Ruta de servicio de cable
+  Route::get('cable',[
+    'uses'  =>  'CableController@index',
+    'as'    =>  'cable'
+  ]);
+  // Ruta para crear servicos de cable
+  Route::post('cableCrear',[
+    'uses'  =>  'CableController@crear',
+    'as'    =>  'cableCrear'
+  ]);
+  // Ruta par editar los servicios de cable
+  Route::put('cableEditar/{id}',[
+    'uses'  =>  'CableController@editar',
+    'as'    =>  'cableEditar'
+  ]);
+  // Ruta para eliminar los servicios de cable
+  Route::get('cableEliminar/{id}',[
+    'uses'  =>  'CableController@borrar',
+    'as'    =>  'cableBorrar'
+  ]);
 ///////////////////////////////////////////////////////////////////////Internet/////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Rutas de Internet

@@ -4,20 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Dia;
-use App\Hora;
 use App\Canal;
-use App\HoraDia;
-use App\DiaSemana;
+use App\PlanCanal;
 
-class CanalController extends Controller
+class CableController extends Controller
 {
   public function index(){
-    $planes = Canal::orderBy('nombre','asc')->paginate(10);
-    $dias = Dia::all();
-    $horas = Hora::all();
+    $planes = PlanCanal::orderBy('nombre','asc')->paginate(10);
+    $canales = Canal::orderBy('nombre','asc')->get();
 
-    return view('canal.canales')->with('planes', $planes)->with('dias', $dias)->with('horas', $horas);
+    return view('cable.cable')->with('planes', $planes)->with('canales', $canales);
   }
 
   public function crear(Request $request){

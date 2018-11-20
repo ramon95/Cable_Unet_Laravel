@@ -6,40 +6,22 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">Servicio de Telefonia</h4>
+            <h4 class="title">Servicio de Cable</h4>
           </div>
           <div class="content">
             <div class="row">
               <div class="col col-sm-12">
-                <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false" aria-controls="collapseExample"><i class="pe-7s-monitor"></i> Crear Canal</a>
+                <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false" aria-controls="collapseExample"><i class="pe-7s-airplay"></i> Crear Canal</a>
               </div>
               <div class="collapse" id="form0">
                 <hr>
                 <form method="POST" action="{{route('canalCrear')}}" accept-charset="UTF-8">
                   {{ csrf_field() }}
-                  <div class="form-group col-md-6">
-                    <label for="NombrePlan">Nombre del Plan</label>
-                    <input class="form-control" placeholder="Nombre del Plan" required name="NombrePlan" type="text" id="NombrePlan">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="Precio">Precio</label>
-                    <input class="form-control capitalaze" placeholder="999999" required name="Precio" type="number" id="Precio">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="Dias">Dias a la semana</label>
-                    <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Seleccione una opción" style="width: 100%;" tabindex="-1" aria-hidden="true" name="Dias[]" required>
-                      <option value="">Seleccione una opción</option>
-                      @foreach ($dias as $dia)
-                        <option value="{{$dia->id}}">{{$dia->descripcion}}</option>
-                      @endforeach
-                    </select>
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="Horas">Horas al Dia</label>
-                    <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Seleccione una opción" style="width: 100%;" tabindex="-1" aria-hidden="true" name="Horas[]" required>
-                      <option value="">Seleccione una opción</option>
-                      @foreach ($horas as $hora)
-                        <option value="{{$hora->id}}">{{$hora->descripcion}}</option>
+                  <div class="form-group col-md-12">
+                    <label for="Canales">Canales</label>
+                    <select class="form-control select2 select2-hidden-accessible" multiple="" style="width: 100%;" tabindex="-1" aria-hidden="true" name="Canales[]" required>
+                      @foreach ($canales as $canal)
+                        <option value="{{$canal->id}}">{{$canal->nombre}}</option>
                       @endforeach
                     </select>
                   </div>
@@ -60,7 +42,7 @@
                   </thead>
                   <tbody>
                     @foreach ($planes as $plan)
-                      <tr class="odd gradeX">
+                      {{-- <tr class="odd gradeX">
                         <td>{{$plan->nombre}}</td>
                         <td>{{$plan->precio}}</td>
                         <td class="center">
@@ -125,7 +107,7 @@
                           </form>
                         </td>
                       </tr>
-                      <tr class="odd gradeX"></tr>
+                      <tr class="odd gradeX"></tr> --}}
                     @endforeach
                   </tbody>
                 </table>

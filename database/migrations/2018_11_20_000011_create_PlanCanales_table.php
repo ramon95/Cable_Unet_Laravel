@@ -24,9 +24,18 @@ class CreatePlancanalesTable extends Migration
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('descripcion', 100)->nullable();
             $table->decimal('precio', 8, 2)->nullable();
+            $table->string('descripcion', 100)->nullable();
+            $table->unsignedInteger('ListaCanales_id');
+
+            $table->index(["ListaCanales_id"], 'fk_PlanCanales_ListaCanales1_idx');
             $table->nullableTimestamps();
+
+
+            $table->foreign('ListaCanales_id', 'fk_PlanCanales_ListaCanales1_idx')
+                ->references('id')->on('ListaCanales')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
