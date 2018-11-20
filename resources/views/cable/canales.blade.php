@@ -13,7 +13,7 @@
               <div class="col col-sm-12">
                 <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false" aria-controls="collapseExample"><i class="pe-7s-monitor"></i> Crear Canal</a>
               </div>
-              <div class="collapse in" id="form0">
+              <div class="collapse" id="form0">
                 <hr>
                 <form method="POST" action="{{route('canalCrear')}}" accept-charset="UTF-8">
                   {{ csrf_field() }}
@@ -73,11 +73,11 @@
                           <form method="POST" action="{{route('canalEditar',$plan->id)}}" accept-charset="UTF-8">
                             <input name="_method" type="hidden" value="PUT">
                             {{ csrf_field() }}
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                               <label for="NombrePlan">Nombre del Plan</label>
                               <input value="{{$plan->nombre}}" class="form-control" placeholder="Nombre del Plan" required name="NombrePlan" type="text" id="NombrePlan">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                               <label for="Precio">Precio</label>
                               <input value="{{$plan->precio}}" class="form-control capitalaze" placeholder="999999" required name="Precio" type="number" id="Precio">
                             </div>
