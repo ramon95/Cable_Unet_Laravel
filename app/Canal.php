@@ -10,7 +10,7 @@ use App\DiaSemana;
 
 class Canal extends Model
 {
-  protected $table="Canal";
+  protected $table="Canales";
 
   protected $primaryKey = 'id';
 

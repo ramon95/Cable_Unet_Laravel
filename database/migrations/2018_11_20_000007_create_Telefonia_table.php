@@ -25,7 +25,7 @@ class CreateTelefoniaTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre', 45)->nullable();
-            $table->decimal('precio', 8, 2)->nullable();
+            $table->double('precio')->nullable();
             $table->integer('cantMin')->nullable();
             $table->nullableTimestamps();
         });
