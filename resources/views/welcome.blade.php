@@ -77,6 +77,12 @@
 	          <i class="pe-7s-phone"></i>
 	          <p>Servicio de Telefonia</p>
 	        </a>
+        </li>
+        <li>
+	        <a href="{{route('usuario')}}">
+	          <i class="pe-7s-users"></i>
+	          <p>Usuarios</p>
+	        </a>
 	      </li>
 	    </ul>
 	  </div>
@@ -129,7 +135,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a class="nombre">
-                <p>{{Auth::user()->nombre}} {{Auth::user()->apellido}}</p>
+                <p>{{Auth::user()->nombre}}</p>
               </a>
             </li>
             {{-- <li class="dropdown">

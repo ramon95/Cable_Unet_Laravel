@@ -112,4 +112,27 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'TelefoniaController@borrar',
     'as'    =>  'telefoniaBorrar'
   ]);
+  /////////////////////////////////////////////////////////////////////////Usuarios//////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Rutas de Usuario
+  // Ruta de Usuario
+  Route::get('usuario',[
+    'uses'  =>  'UsuarioController@index',
+    'as'    =>  'usuario'
+  ]);
+  // Ruta para crear usuarios
+  Route::post('usuarioCrear',[
+    'uses'  =>  'UsuarioController@crear',
+    'as'    =>  'usuarioCrear'
+  ]);
+  // Ruta par editar los usuarios
+  Route::put('usuarioEditar/{id}',[
+    'uses'  =>  'UsuarioController@editar',
+    'as'    =>  'usuarioEditar'
+  ]);
+  // Ruta para eliminar los usarios
+  Route::get('usuarioEliminar/{id}',[
+    'uses'  =>  'UsuarioController@borrar',
+    'as'    =>  'usuarioBorrar'
+  ]);
 });
