@@ -24,11 +24,11 @@
                   <div class="form-group col-md-6">
                     <label for="password">Contraseña</label>
                     <input class="form-control" placeholder="Contraseña" required name="password" type="password" id="password">
-                  </div> 
+                  </div>
                   <div class="form-group col-md-6">
                     <label for="nombre">Nombre</label>
                     <input class="form-control" placeholder="Nombre" required name="nombre" type="text" id="nombre">
-                  </div> 
+                  </div>
                   <div class="form-group col-md-6">
                     <label for="apellido">Apellido</label>
                     <input class="form-control" placeholder="Apellido" required name="apellido" type="text" id="apellido">
@@ -36,15 +36,15 @@
                   <div class="form-group col-md-6">
                     <label for="cedula">Cedula</label>
                     <input class="form-control" placeholder="Cedula" required name="cedula" type="number" id="cedula">
-                  </div>   
+                  </div>
                 <div class="form-group col-md-6">
                     <label for="rif">Rif</label>
                     <input class="form-control" placeholder="Rif" required name="rif" type="number" id="rif">
-                </div>   
+                </div>
                 <div class="form-group col-md-6">
                     <label for="direccion">Direccion</label>
                     <input class="form-control" placeholder="Direccion" required name="direccion" type="text" id="direccion">
-                </div>   
+                </div>
                 <div class="form-group col-md-4">
                     <label for="rol">Rol</label>
                     <select class="form-control" name="rol" required>
@@ -52,7 +52,7 @@
                           <option value="{{$rol->id}}">{{$rol->descripcion}}</option>
                         @endforeach
                     </select>
-                </div>                    
+                </div>
                   <div class="form-group col-md-12">
                     <button class="btn btn-success" type="submit"><i class="fa  fa-upload"></i> Crear</button>
                   </div>
@@ -93,12 +93,12 @@
                               </div>
                               <div class="form-group col-md-6">
                                 <label for="password">Contraseña</label>
-                                <input class="form-control" placeholder="Contraseña" required name="password" type="password" id="password">
-                              </div> 
+                                <input class="form-control" placeholder="Contraseña" name="password" type="password" id="password">
+                              </div>
                               <div class="form-group col-md-6">
                                 <label for="nombre">Nombre</label>
                                 <input value="{{$usuario->nombre}}" class="form-control" placeholder="Nombre" required name="nombre" type="text" id="nombre">
-                              </div> 
+                              </div>
                               <div class="form-group col-md-6">
                                 <label for="apellido">Apellido</label>
                                 <input value="{{$usuario->apellido}}" class="form-control" placeholder="Apellido" required name="apellido" type="text" id="apellido">
@@ -106,15 +106,15 @@
                               <div class="form-group col-md-6">
                                 <label for="cedula">Cedula</label>
                                 <input value="{{$usuario->cedula}}" class="form-control" placeholder="Cedula" required name="cedula" type="number" id="cedula">
-                              </div>   
+                              </div>
                               <div class="form-group col-md-6">
                                 <label for="rif">Rif</label>
                                 <input value="{{$usuario->rif}}" class="form-control" placeholder="Rif" required name="rif" type="number" id="rif">
-                              </div>   
+                              </div>
                               <div class="form-group col-md-6">
                                 <label for="direccion">Direccion</label>
                                 <input value="{{$usuario->direccion}}" class="form-control" placeholder="Direccion" required name="direccion" type="text" id="direccion">
-                              </div>   
+                              </div>
                               <div class="form-group col-md-4">
                                 <label for="rol">Rol</label>
                                 <select class="form-control" name="rol" required>
@@ -122,7 +122,7 @@
                                       <option value="{{$rol->id}}">{{$rol->descripcion}}</option>
                                     @endforeach
                                 </select>
-                                </div>                            
+                                </div>
                             <div class="form-group col-md-12">
                               <button class="btn btn-warning" type="submit"><i class="pe-7s-pen"></i> Editar</button>
                             </div>
