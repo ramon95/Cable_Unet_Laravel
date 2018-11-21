@@ -28,9 +28,9 @@ class CreateServiciosTable extends Migration
             $table->decimal('total', 8, 2)->nullable();
             $table->date('fechaCorte')->nullable()->comment('Fecha en la que se cobra el plan nuevamente ');
             $table->unsignedInteger('Usuario_id');
-            $table->unsignedInteger('Telefonia_id');
-            $table->unsignedInteger('Internet_id');
-            $table->unsignedInteger('PlanCanales_id');
+            $table->unsignedInteger('Telefonia_id')->nullable();
+            $table->unsignedInteger('Internet_id')->nullable();
+            $table->unsignedInteger('PlanCanales_id')->nullable();
 
             $table->index(["Internet_id"], 'fk_Servicios_Internet1_idx');
 

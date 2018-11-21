@@ -25,7 +25,6 @@ class CreateCanalesTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre', 45);
-            $table->double('precio')->nullable();
             $table->nullableTimestamps();
         });
     }
