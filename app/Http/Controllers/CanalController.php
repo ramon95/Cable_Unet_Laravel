@@ -23,7 +23,6 @@ class CanalController extends Controller
   public function crear(Request $request){
     $canal = New Canal();
     $canal->nombre = $request->NombrePlan;
-    $canal->precio = $request->Precio;
     $canal->save();
 
     foreach ($request->Dias as $dia) {

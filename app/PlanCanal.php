@@ -23,6 +23,6 @@ class PlanCanal extends Model
   }
 
   public function listaCanales(){
-    return $this->belongsTo('App\ListaCanal','ListaCanales_id');
+    return $this->hasMany('App\ListaCanal','PlanCanales_id','id');
   }
 }

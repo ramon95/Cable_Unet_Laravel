@@ -83,6 +83,7 @@
                     @endforeach
                   </tbody>
                 </table>
+                {!!$planes->render()!!}
               @else
                 <div class="alert alert-info col-md-12">
                   <span>No hay planes creados</span>

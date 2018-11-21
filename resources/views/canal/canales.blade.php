@@ -17,13 +17,9 @@
                 <hr>
                 <form method="POST" action="{{route('canalCrear')}}" accept-charset="UTF-8">
                   {{ csrf_field() }}
-                  <div class="form-group col-md-6">
-                    <label for="NombrePlan">Nombre del Plan</label>
+                  <div class="form-group col-md-12">
+                    <label for="NombrePlan">Nombre del canal</label>
                     <input class="form-control" placeholder="Nombre del Plan" required name="NombrePlan" type="text" id="NombrePlan">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="Precio">Precio</label>
-                    <input class="form-control" placeholder="999999" required name="Precio" type="number" id="Precio">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="Dias">Dias a la semana</label>
@@ -52,7 +48,6 @@
                   <thead>
                     <tr>
                       <th>Nombre</th>
-                      <th>Precio</th>
                       <th>Acción</th>
                     </tr>
                   </thead>
@@ -60,7 +55,6 @@
                     @foreach ($planes as $plan)
                       <tr class="odd gradeX">
                         <td>{{$plan->nombre}}</td>
-                        <td>{{$plan->precio}}</td>
                         <td class="center">
                           <a title="Editar" class="btn btn-warning" role="button" data-toggle="collapse" href="#form{{$plan->id}}" aria-expanded="false" aria-controls="collapseExample"><i class="pe-7s-pen" aria-hidden="true"></i></a>
                           <a title="Eliminar" href="{{route('canalBorrar',$plan->id)}}" onclick="return confirm('¿Seguro que deseas eliminar?')" class="btn btn-danger"><i class="pe-7s-close" aria-hidden="true"></i></a>
@@ -71,13 +65,9 @@
                           <form method="POST" action="{{route('canalEditar',$plan->id)}}" accept-charset="UTF-8">
                             <input name="_method" type="hidden" value="PUT">
                             {{ csrf_field() }}
-                            <div class="form-group col-md-6">
-                              <label for="NombrePlan">Nombre del Plan</label>
+                            <div class="form-group col-md-12">
+                              <label for="NombrePlan">Nombre del Canal</label>
                               <input value="{{$plan->nombre}}" class="form-control" placeholder="Nombre del Plan" required name="NombrePlan" type="text" id="NombrePlan">
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label for="Precio">Precio</label>
-                              <input value="{{$plan->precio}}" class="form-control capitalaze" placeholder="999999" required name="Precio" type="number" id="Precio">
                             </div>
                             <div class="form-group col-md-6">
                               <label for="Dias">Dias a la semana</label>
@@ -125,6 +115,7 @@
                     @endforeach
                   </tbody>
                 </table>
+                {!!$planes->render()!!}
               @else
                 <div class="alert alert-info col-md-12">
                   <span>No hay planes creados</span>
