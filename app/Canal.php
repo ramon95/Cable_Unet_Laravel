@@ -16,7 +16,6 @@ class Canal extends Model
 
   protected $fillable = [
       'nombre',
-      'precio',
   ];
 
   public function listaCanales(){
