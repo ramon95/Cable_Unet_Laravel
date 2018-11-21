@@ -43,28 +43,28 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'CanalController@borrar',
     'as'    =>  'canalBorrar'
   ]);
-  /////////////////////////////////////////////////////////////////////////Canales//////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////Servicio de canales//////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Rutas de servicio de cable
-  // Ruta de servicio de cable
-  Route::get('cable',[
-    'uses'  =>  'CableController@index',
-    'as'    =>  'cable'
+  // Rutas de los planes de los canales
+  // Ruta de los planes de los canales
+  Route::get('planCanal',[
+    'uses'  =>  'PlanCanalController@index',
+    'as'    =>  'planCanal'
   ]);
-  // Ruta para crear servicos de cable
-  Route::post('cableCrear',[
-    'uses'  =>  'CableController@crear',
-    'as'    =>  'cableCrear'
+  // Ruta para crear el plan del canales
+  Route::post('planCanalCrear',[
+    'uses'  =>  'PlanCanalController@crear',
+    'as'    =>  'planCanalCrear'
   ]);
-  // Ruta par editar los servicios de cable
-  Route::put('cableEditar/{id}',[
-    'uses'  =>  'CableController@editar',
-    'as'    =>  'cableEditar'
+  // Ruta par editar el plan del canales
+  Route::put('planCanalEditar/{id}',[
+    'uses'  =>  'PlanCanalController@editar',
+    'as'    =>  'planCanalEditar'
   ]);
-  // Ruta para eliminar los servicios de cable
-  Route::get('cableEliminar/{id}',[
-    'uses'  =>  'CableController@borrar',
-    'as'    =>  'cableBorrar'
+  // Ruta para eliminarel plan del canales
+  Route::get('planCanalEliminar/{id}',[
+    'uses'  =>  'PlanCanalController@borrar',
+    'as'    =>  'planCanalBorrar'
   ]);
 ///////////////////////////////////////////////////////////////////////Internet/////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

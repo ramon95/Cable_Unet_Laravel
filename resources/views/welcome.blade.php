@@ -61,9 +61,9 @@
         </a>
       	</li>
         <li>
-        <a href="{{route('cable')}}">
+        <a href="{{route('planCanal')}}">
           <i class="pe-7s-airplay"></i>
-          <p>Servicio de Cable</p>
+          <p>Servicio de Canales</p>
         </a>
       	</li>
 	      <li>

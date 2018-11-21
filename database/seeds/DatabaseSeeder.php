@@ -209,12 +209,6 @@ class DatabaseSeeder extends Seeder
         'updated_at' => date("Y-m-d H:i:s"),
       ]);
 
-      DB::table('Dias')->insert([
-        'descripcion'  =>  'Domingo',
-        'created_at' => date("Y-m-d H:i:s"),
-        'updated_at' => date("Y-m-d H:i:s"),
-      ]);
-
       DB::table('Usuarios')->insert([
         'email'      =>  'admin@unet.com',
         'password'   => bcrypt('12345'),

@@ -23,7 +23,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="Precio">Precio</label>
-                    <input class="form-control capitalaze" placeholder="999999" required name="Precio" type="number" id="Precio">
+                    <input class="form-control" placeholder="999999" required name="Precio" type="number" id="Precio">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="Dias">Dias a la semana</label>
