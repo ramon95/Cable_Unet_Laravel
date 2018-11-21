@@ -56,8 +56,8 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'PlanCanalController@crear',
     'as'    =>  'planCanalCrear'
   ]);
-  // Ruta par editar el plan del canales
-  Route::put('planCanalEditar/{id}',[
+  // Ruta par editar los planes de canal
+  Route::put('canalEditar/{id}',[
     'uses'  =>  'PlanCanalController@editar',
     'as'    =>  'planCanalEditar'
   ]);

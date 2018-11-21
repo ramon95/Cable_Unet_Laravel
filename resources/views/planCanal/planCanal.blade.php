@@ -60,7 +60,8 @@
                       </tr>
                       <tr class="odd gradeX collapse"  id="form{{$plan->id}}">
                         <td COLSPAN=8>
-                          <form method="POST" action="{{route('planCanalCrear')}}" accept-charset="UTF-8">
+                          <form method="POST" action="{{route('planCanalEditar',$plan->id)}}" accept-charset="UTF-8">
+                            <input name="_method" type="hidden" value="PUT">
                             {{ csrf_field() }}
                             <div class="form-group col-md-6">
                               <label for="NombrePlan">Nombre del Plan</label>
@@ -89,7 +90,7 @@
                               </select>
                             </div>
                             <div class="form-group col-md-12">
-                              <button class="btn btn-success" type="submit"><i class="fa  fa-upload"></i> Crear</button>
+                              <button class="btn btn-warning" type="submit"><i class="pe-7s-pen"></i> Editar</button>
                             </div>
                           </form>
                         </td>

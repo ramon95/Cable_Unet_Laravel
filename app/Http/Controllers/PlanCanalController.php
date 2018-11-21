@@ -13,7 +13,7 @@ class PlanCanalController extends Controller
   public function index(){
     $planes = PlanCanal::orderBy('descripcion','asc')->paginate(10);
     $canales = Canal::orderBy('nombre','asc')->get();
-// $p = PlanCanal::find(1);dd($p->listaCanales);
+
     return view('planCanal.planCanal')->with('planes', $planes)->with('canales', $canales);
   }
 
@@ -34,12 +34,38 @@ class PlanCanalController extends Controller
   }
 
   public function editar(Request $request, $id){
-
     $planCanal = PlanCanal::find($id);
-    $planCanal->nombre = $request->NombrePlan;
+    $planCanal->descripcion = $request->NombrePlan;
     $planCanal->precio = $request->Precio;
-    $planCanal->cantMB = $request->CantidadMB;
     $planCanal->save();
+
+    if ($planCanal->listaCanales->count() == sizeof($request->Canales)) {
+      foreach ($planCanal->listaCanales as $i => $listaCanales) {
+        $listaCanales->Canales_id = $request->Canales[$i];
+        $listaCanales->save();
+      }
+    }
+    elseif ($planCanal->listaCanales->count() < sizeof($request->Canales)) {
+      for ($i=0; $i < $planCanal->listaCanales->count(); $i++) {
+        $planCanal->listaCanales[$i]->Canales_id = $request->Canales[$i];
+        $planCanal->listaCanales[$i]->save();
+      }
+      for ($i=$planCanal->listaCanales->count(); $i < sizeof($request->Canales); $i++) {
+        $listaCanal = new ListaCanal();
+        $listaCanal->PlanCanales_id = $planCanal->id;
+        $listaCanal->Canales_id = $request->Canales[$i];
+        $listaCanal->save();
+      }
+    }
+    elseif ($planCanal->listaCanales->count() > sizeof($request->Canales)) {
+      for ($i=0; $i < sizeof($request->Canales); $i++) {
+        $planCanal->listaCanales[$i]->Canales_id = $request->Canales[$i];
+        $planCanal->listaCanales[$i]->save();
+      }
+      for ($i=sizeof($request->Canales); $i < $planCanal->listaCanales->count(); $i++) {
+        $planCanal->listaCanales[$i]->delete();
+      }
+    }
 
     return redirect()->route('planCanal');
   }
