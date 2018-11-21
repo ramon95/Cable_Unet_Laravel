@@ -17,7 +17,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth']],function(){
   //Ruta de home
   Route::get('/', function () {
-    return view('welcome');
+    return view('index');
   });
   Route::get('/home', 'HomeController@index')->name('home');
   /////////////////////////////////////////////////////////////////////////Canales//////////////////////////////////////////////////////////
