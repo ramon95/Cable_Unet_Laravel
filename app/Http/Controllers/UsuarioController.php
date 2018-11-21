@@ -23,7 +23,6 @@ class UsuarioController extends Controller
         $usuario->nombre = $request->nombre;
         $usuario->apellido = $request->apellido;
         $usuario->cedula = $request->cedula;
-        $usuario->rif = $request->rif;
         $usuario->direccion = $request->direccion;
         $usuario->Rol_id = $request->rol;
         $usuario->save();
@@ -41,7 +40,6 @@ class UsuarioController extends Controller
         $usuario->nombre = $request->nombre;
         $usuario->apellido = $request->apellido;
         $usuario->cedula = $request->cedula;
-        $usuario->rif = $request->rif;
         $usuario->direccion = $request->direccion;
         $usuario->Rol_id = $request->rol;
         $usuario->save();

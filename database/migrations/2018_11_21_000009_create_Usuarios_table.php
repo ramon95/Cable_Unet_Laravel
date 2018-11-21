@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateUsuariosTable extends Migration
 {
     /**
@@ -11,7 +9,6 @@ class CreateUsuariosTable extends Migration
      * @var string
      */
     public $set_schema_table = 'Usuarios';
-
     /**
      * Run the migrations.
      * @table Usuarios
@@ -29,7 +26,6 @@ class CreateUsuariosTable extends Migration
             $table->string('nombre', 45);
             $table->string('apellido', 45);
             $table->integer('cedula')->nullable();
-            $table->integer('rif')->nullable();
             $table->string('direccion', 45);
             $table->rememberToken();
             $table->unsignedInteger('Rol_id');

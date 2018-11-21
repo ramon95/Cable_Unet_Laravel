@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateRolTable extends Migration
 {
     /**
@@ -11,7 +9,6 @@ class CreateRolTable extends Migration
      * @var string
      */
     public $set_schema_table = 'Rol';
-
     /**
      * Run the migrations.
      * @table Rol

@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateTelefoniaTable extends Migration
 {
     /**
@@ -11,7 +9,6 @@ class CreateTelefoniaTable extends Migration
      * @var string
      */
     public $set_schema_table = 'Telefonia';
-
     /**
      * Run the migrations.
      * @table Telefonia

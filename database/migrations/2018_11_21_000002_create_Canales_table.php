@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateCanalesTable extends Migration
 {
     /**
@@ -11,7 +9,6 @@ class CreateCanalesTable extends Migration
      * @var string
      */
     public $set_schema_table = 'Canales';
-
     /**
      * Run the migrations.
      * @table Canales

@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateDiasemanasTable extends Migration
 {
     /**
@@ -11,7 +9,6 @@ class CreateDiasemanasTable extends Migration
      * @var string
      */
     public $set_schema_table = 'DiaSemanas';
-
     /**
      * Run the migrations.
      * @table DiaSemanas

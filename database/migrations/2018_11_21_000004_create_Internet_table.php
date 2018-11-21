@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateInternetTable extends Migration
 {
     /**
@@ -11,7 +9,6 @@ class CreateInternetTable extends Migration
      * @var string
      */
     public $set_schema_table = 'Internet';
-
     /**
      * Run the migrations.
      * @table Internet
