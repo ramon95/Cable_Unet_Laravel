@@ -179,7 +179,7 @@
           </ul>
         </nav>
         <p class="copyright pull-right">
-        &copy; <script>document.write(new Date().getFullYear())</script> Elaborado de Ramón Pérez y Edgar Garcia
+        &copy; <script>document.write(new Date().getFullYear())</script> Elaborado por Ramón Pérez y Edgar Garcia
         </p>
       </div>
     </footer>
