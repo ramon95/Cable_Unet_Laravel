@@ -40,8 +40,8 @@ class CreateListacanalesTable extends Migration
 
             $table->foreign('PlanCanales_id', 'fk_ListaCanales_PlanCanales1_idx')
                 ->references('id')->on('PlanCanales')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
