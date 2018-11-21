@@ -52,75 +52,65 @@
                         Cable Unet
                     </a>
                 </div>
-                @if(auth()->user()->id == 1)
-                  <ul class="nav">
-                      <li class="active">
-                          <a href="/">
-                              <i class="pe-7s-home"></i>
-                              <p>Inicio</p>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="{{route('canal')}}">
-                              <i class="pe-7s-monitor"></i>
-                              <p>Canales</p>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="{{route('planCanal')}}">
-                              <i class="pe-7s-airplay"></i>
-                              <p>Servicio de Canales</p>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="{{route('internet')}}">
-                              <i class="pe-7s-global"></i>
-                              <p>Servicio de Internet</p>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="{{route('telefonia')}}">
-                              <i class="pe-7s-phone"></i>
-                              <p>Servicio de Telefonia</p>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="{{route('usuario')}}">
-                              <i class="pe-7s-users"></i>
-                              <p>Usuarios</p>
-                          </a>
-                      </li>
-                  </ul>
-                @else
-                  <ul class="nav">
-                      <li class="active">
-                          <a href="/">
-                              <i class="pe-7s-home"></i>
-                              <p>Inicio</p>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="pe-7s-monitor"></i>
-                              <p>Planes activos</p>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="pe-7s-monitor"></i>
-                              <p>Cambio de planes</p>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="pe-7s-monitor"></i>
-                              <p>Factuacion</p>
-                          </a>
-                      </li>
-                  </ul>
-                @endif
-            </div>
-
+                <ul class="nav">
+                  <li class="active">
+                    <a href="/">
+                    <i class="pe-7s-home"></i>
+                    <p>Inicio</p>
+                    </a>
+                  </li>
+                  @if (Auth::user()->Rol_id == 1)
+                    <li>
+                      <a href="{{route('canal')}}">
+                        <i class="pe-7s-monitor"></i>
+                        <p>Canales</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{route('planCanal')}}">
+                        <i class="pe-7s-airplay"></i>
+                        <p>Servicio de Canales</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{route('internet')}}">
+                        <i class="pe-7s-global"></i>
+                        <p>Servicio de Internet</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{route('telefonia')}}">
+                        <i class="pe-7s-phone"></i>
+                        <p>Servicio de Telefonia</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{route('usuario')}}">
+                        <i class="pe-7s-users"></i>
+                        <p>Usuarios</p>
+                      </a>
+                    </li>                    
+                  @endif
+                  <li>
+                    <a href="#">
+                    <i class="pe-7s-monitor"></i>
+                    <p>Planes activos</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    <i class="pe-7s-monitor"></i>
+                    <p>Cambio de planes</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    <i class="pe-7s-monitor"></i>
+                    <p>Factuacion</p>
+                    </a>
+                  </li>
+                </ul>
+          </div>
         </div>
         <div class="main-panel">
             <nav class="navbar navbar-default navbar-fixed">

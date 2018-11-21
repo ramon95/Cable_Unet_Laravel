@@ -219,5 +219,16 @@ class DatabaseSeeder extends Seeder
         'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s"),
       ]);
+
+      DB::table('Usuarios')->insert([
+        'email'      =>  'user@unet.com',
+        'password'   => bcrypt('12345'),
+        'nombre'     => 'Usuario',
+        'apellido'   => 'Normal',
+        'direccion'  => 'san cristobal',
+        'Rol_id'     => '2',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
     }
 }
