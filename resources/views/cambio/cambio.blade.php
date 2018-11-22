@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Registrar planes</h4>
+                    <h4 class="title">Cambiar planes</h4>
                 </div>
                 <div class="content">
                     <div class="row">
@@ -16,7 +16,7 @@
                         </div>
                         <div class="col col-sm-12">
                             <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false"
-                                aria-controls="collapseExample"><i class="pe-7s-note"></i> Registrar planes</a>
+                                aria-controls="collapseExample"><i class="pe-7s-refresh-2"></i> Cambiar planes</a>
                         </div>
                         <hr class="col-md-12">
                         <div class="collapse" id="form0">

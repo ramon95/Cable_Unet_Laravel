@@ -98,13 +98,13 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="{{route('cambio')}}">
                     <i class="pe-7s-refresh-2"></i>
                     <p>Cambio de planes</p>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="{{route('factura')}}">
                     <i class="pe-7s-piggy"></i>
                     <p>Factuacion</p>
                     </a>

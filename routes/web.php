@@ -153,10 +153,11 @@ Route::group(['middleware' => ['auth']],function(){
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Rutas de Cambio
   // Ruta de Cambio
-  Route::get('cambio',[
-    'uses'  =>  'CambioController@index',
-    'as'    =>  'cambio'
-  ]);
+  // Route::get('cambio',[
+  //   'uses'  =>  'CambioController@index',
+  //   'as'    =>  'cambio'
+  // ]);
+  Route::get('cambio','CambioController@index')->name('cambio');
   // Ruta par editar los planes
   Route::put('cambioEditar/{id}',[
     'uses'  =>  'CambioController@editar',
@@ -167,5 +168,14 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'CambioController@borrar',
     'as'    =>  'cambioBorrar'
   ]);
+  /////////////////////////////////////////////////////////////////////////Factura//////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Rutas de Factura
+  // Ruta de Factura
+  // Route::get('factura',[
+  //   'uses'  =>  'FacturaController@index',
+  //   'as'    =>  'factura'
+  // ]);
+  Route::get('factura','FacturaController@index')->name('factura');
 
 });
