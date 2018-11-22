@@ -214,7 +214,7 @@ class DatabaseSeeder extends Seeder
         'password'   => bcrypt('12345'),
         'nombre'     => 'admin',
         'apellido'   => 'admin',
-        'cedula'     =>  '1'
+        'cedula'     =>  '1',
         'direccion'  => 'san cristobal',
         'Rol_id'     => '1',
         'created_at' => date("Y-m-d H:i:s"),
@@ -226,7 +226,7 @@ class DatabaseSeeder extends Seeder
         'password'   => bcrypt('12345'),
         'nombre'     => 'Usuario',
         'apellido'   => 'Normal',
-        'cedula'     =>  '2'
+        'cedula'     =>  '2',
         'direccion'  => 'san cristobal',
         'Rol_id'     => '2',
         'created_at' => date("Y-m-d H:i:s"),
@@ -234,7 +234,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('Canales')->insert([
-        'nombre'     => 'Canal 1',
+        'nombre'     => 'HBO',
         'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s"),
       ]);
@@ -261,8 +261,116 @@ class DatabaseSeeder extends Seeder
       ]);
 
       DB::table('HoraDias')->insert([
+        'Horas_id'   => '5',
+        'Canales_id' => '1',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('Canales')->insert([
+        'nombre'     => 'ESPN',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('DiaSemanas')->insert([
+        'Canales_id'  => '1',
+        'Dias_id'     => '1',
+        'created_at'  => date("Y-m-d H:i:s"),
+        'updated_at'  => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('DiaSemanas')->insert([
+        'Canales_id'  => '1',
+        'Dias_id'     => '2',
+        'created_at'  => date("Y-m-d H:i:s"),
+        'updated_at'  => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('DiaSemanas')->insert([
+        'Canales_id'  => '1',
+        'Dias_id'     => '4',
+        'created_at'  => date("Y-m-d H:i:s"),
+        'updated_at'  => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('DiaSemanas')->insert([
+        'Canales_id'  => '1',
+        'Dias_id'     => '6',
+        'created_at'  => date("Y-m-d H:i:s"),
+        'updated_at'  => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('HoraDias')->insert([
         'Horas_id'   => '1',
-        'Canales_id' => '5',
+        'Canales_id' => '1',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('HoraDias')->insert([
+        'Horas_id'   => '3',
+        'Canales_id' => '1',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('HoraDias')->insert([
+        'Horas_id'   => '5',
+        'Canales_id' => '1',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('Internet')->insert([
+        'nombre'     => 'Aba 10Mb',
+        'precio'     => '13000',
+        'cantMB'     => '10',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('Internet')->insert([
+        'nombre'     => 'Aba 6Mb',
+        'precio'     => '9000',
+        'cantMB'     => '6',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('Telefonia')->insert([
+        'nombre'     => 'Conectate con todos',
+        'precio'     => '1500',
+        'cantMin'     => '300',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('Telefonia')->insert([
+        'nombre'     => 'Llamandito',
+        'precio'     => '4000',
+        'cantMin'     => '900',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('PlanCanales')->insert([
+        'precio'     => '5000',
+        'descripcion'=> 'Peliculas y deportes',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('ListaCanales')->insert([
+        'Canales_id' => '1',
+        'PlanCanales_id' => '1',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('ListaCanales')->insert([
+        'Canales_id' => '2',
+        'PlanCanales_id' => '1',
         'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s"),
       ]);
