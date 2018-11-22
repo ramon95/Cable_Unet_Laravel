@@ -22,8 +22,7 @@
                         </div>
                       @endif
                         <div class="col col-sm-12">
-                            <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false"
-                                aria-controls="collapseExample"><i class="pe-7s-note"></i> Registrar planes</a>
+                          <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false" aria-controls="collapseExample"><i class="pe-7s-note"></i> Registrar planes</a>
                         </div>
                         <hr class="col-md-12">
                         <div class="collapse" id="form0">
