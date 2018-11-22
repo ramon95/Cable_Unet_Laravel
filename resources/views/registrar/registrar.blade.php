@@ -30,6 +30,11 @@
                                     <label for="NombrePlan">Nombre del Plan</label>
                                     <input class="form-control" placeholder="Nombre del Plan" required name="NombrePlan"
                                         type="text" id="NombrePlan">
+                                    {{-- <select class="form-control" name="rol" required>
+                                        @foreach ($roles as $rol)
+                                        <option value="{{$rol->id}}">{{$rol->descripcion}}</option>
+                                        @endforeach
+                                    </select> --}}
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="Precio">Precio</label>
