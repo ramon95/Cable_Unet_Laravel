@@ -139,11 +139,11 @@ Route::group(['middleware' => ['auth']],function(){
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Rutas de Registrar
   // Ruta de Registrar
-  // Route::get('registrar',[
-  //   'uses'  =>  'RegistroController@index',
-  //   'as'    =>  'registro'
-  // ]);
-  Route::get('registrar','RegistroController@index')->name('registrar');
+  Route::get('registrar',[
+    'uses'  =>  'RegistroController@index',
+    'as'    =>  'registrar'
+  ]);
+  // Route::get('registrar','RegistroController@index')->name('registrar');
   // Ruta para crear registros
   Route::post('registroCrear',[
     'uses'  =>  'RegistroController@crear',
