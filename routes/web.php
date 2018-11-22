@@ -135,4 +135,37 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'UsuarioController@borrar',
     'as'    =>  'usuarioBorrar'
   ]);
+  /////////////////////////////////////////////////////////////////////////Registros//////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Rutas de Registrar
+  // Ruta de Registrar
+  // Route::get('registrar',[
+  //   'uses'  =>  'RegistroController@index',
+  //   'as'    =>  'registro'
+  // ]);
+  Route::get('registrar','RegistroController@index')->name('registrar');
+  // Ruta para crear registros
+  Route::post('registroCrear',[
+    'uses'  =>  'RegistroController@crear',
+    'as'    =>  'registroCrear'
+  ]);
+  /////////////////////////////////////////////////////////////////////////Cambios//////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Rutas de Cambio
+  // Ruta de Cambio
+  Route::get('cambio',[
+    'uses'  =>  'CambioController@index',
+    'as'    =>  'cambio'
+  ]);
+  // Ruta par editar los planes
+  Route::put('cambioEditar/{id}',[
+    'uses'  =>  'CambioController@editar',
+    'as'    =>  'cambioEditar'
+  ]);
+  // Ruta para eliminar los planes
+  Route::get('cambioEliminar/{id}',[
+    'uses'  =>  'CambioController@borrar',
+    'as'    =>  'cambioBorrar'
+  ]);
+
 });

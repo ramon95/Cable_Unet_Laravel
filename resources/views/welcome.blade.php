@@ -92,20 +92,20 @@
                     </li>                    
                   @endif
                   <li>
-                    <a href="#">
-                    <i class="pe-7s-monitor"></i>
-                    <p>Planes activos</p>
+                    <a href="{{route('registrar')}}">
+                    <i class="pe-7s-note"></i>
+                    <p>Registrar Planes</p>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                    <i class="pe-7s-monitor"></i>
+                    <i class="pe-7s-refresh-2"></i>
                     <p>Cambio de planes</p>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                    <i class="pe-7s-monitor"></i>
+                    <i class="pe-7s-piggy"></i>
                     <p>Factuacion</p>
                     </a>
                   </li>
