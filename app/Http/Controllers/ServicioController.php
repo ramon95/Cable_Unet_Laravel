@@ -14,11 +14,15 @@ class ServicioController extends Controller
 {
   public function index(){
     $usuarios = User::orderBy('cedula','asc')->get();
-    $internet = Internet::orderBy('nombre','asc')->get();
-    $telefonia = Telefonia::orderBy('nombre','asc')->get();
-    $planCanal = PlanCanal::orderBy('descripcion','asc')->get();
+    $internets = Internet::orderBy('nombre','asc')->get();
+    $telefonias = Telefonia::orderBy('nombre','asc')->get();
+    $planCanales = PlanCanal::orderBy('descripcion','asc')->get();
 
-    return view('servicio.servicio')->with('usuarios', $usuarios);
+    return view('servicio.servicio')
+         ->with('usuarios', $usuarios)
+         ->with('internets', $internets)
+         ->with('telefonias', $telefonias)
+         ->with('planCanales',$planCanales);
   }
 
   public function crear(Request $request){
