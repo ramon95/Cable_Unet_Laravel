@@ -46,9 +46,8 @@ class CanalController extends Controller
 
     $canal = Canal::find($id);
     $canal->nombre = $request->NombrePlan;
-    $canal->precio = $request->Precio;
     $canal->save();
-
+    // Edicion de horas
     if ($canal->horasDias->count() == sizeof($request->Horas)) {
       foreach ($canal->horasDias as $i => $horaDia) {
         $horaDia->Horas_id = $request->Horas[$i];
@@ -74,6 +73,34 @@ class CanalController extends Controller
       }
       for ($i=sizeof($request->Horas); $i < $canal->horasDias->count(); $i++) {
         $canal->horasDias[$i]->delete();
+      }
+    }
+    //Edicion de dias
+    if ($canal->diaSemanas->count() == sizeof($request->Dias)) {
+      foreach ($canal->diaSemanas as $i => $diaSemanas) {
+        $diaSemanas->Dias_id = $request->Dias[$i];
+        $diaSemanas->save();
+      }
+    }
+    elseif ($canal->diaSemanas->count() < sizeof($request->Dias)) {
+      for ($i=0; $i < $canal->diaSemanas->count(); $i++) {
+        $canal->diaSemanas[$i]->Dias_id = $request->Dias[$i];
+        $canal->diaSemanas[$i]->save();
+      }
+      for ($i=$canal->diaSemanas->count(); $i < sizeof($request->Dias); $i++) {
+        $diaSemanas = new DiaSemana();
+        $diaSemanas->Canales_id = $canal->id;
+        $diaSemanas->Dias_id = $request->Dias[$i];
+        $diaSemanas->save();
+      }
+    }
+    elseif ($canal->diaSemanas->count() > sizeof($request->Dias)) {
+      for ($i=0; $i < sizeof($request->Dias); $i++) {
+        $canal->diaSemanas[$i]->Dias_id = $request->Dias[$i];
+        $canal->diaSemanas[$i]->save();
+      }
+      for ($i=sizeof($request->Dias); $i < $canal->diaSemanas->count(); $i++) {
+        $canal->diaSemanas[$i]->delete();
       }
     }
 
