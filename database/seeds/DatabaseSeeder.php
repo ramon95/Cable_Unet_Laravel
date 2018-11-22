@@ -214,6 +214,7 @@ class DatabaseSeeder extends Seeder
         'password'   => bcrypt('12345'),
         'nombre'     => 'admin',
         'apellido'   => 'admin',
+        'cedula'     =>  '1'
         'direccion'  => 'san cristobal',
         'Rol_id'     => '1',
         'created_at' => date("Y-m-d H:i:s"),
@@ -225,8 +226,43 @@ class DatabaseSeeder extends Seeder
         'password'   => bcrypt('12345'),
         'nombre'     => 'Usuario',
         'apellido'   => 'Normal',
+        'cedula'     =>  '2'
         'direccion'  => 'san cristobal',
         'Rol_id'     => '2',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('Canales')->insert([
+        'nombre'     => 'Canal 1',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('DiaSemanas')->insert([
+        'Canales_id'  => '1',
+        'Dias_id'     => '1',
+        'created_at'  => date("Y-m-d H:i:s"),
+        'updated_at'  => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('DiaSemanas')->insert([
+        'Canales_id'  => '1',
+        'Dias_id'     => '2',
+        'created_at'  => date("Y-m-d H:i:s"),
+        'updated_at'  => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('HoraDias')->insert([
+        'Horas_id'   => '1',
+        'Canales_id' => '1',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s"),
+      ]);
+
+      DB::table('HoraDias')->insert([
+        'Horas_id'   => '1',
+        'Canales_id' => '5',
         'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s"),
       ]);

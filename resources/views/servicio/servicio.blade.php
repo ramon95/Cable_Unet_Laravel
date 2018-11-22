@@ -6,17 +6,24 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Cambiar planes</h4>
+                    <h4 class="title">Registrar planes</h4>
                 </div>
                 <div class="content">
                     <div class="row">
-                        <div class="form-group col-sm-6">
-                            <label for="cedula">Cedula</label>
-                            <input class="form-control" placeholder="Cedula" required name="cedula" type="text" id="cedula">
+                      @if (Auth::user()->Rol_id == 1)
+                        <div class="form-group col-sm-12">
+                          <label for="nombre">Cedula</label>
+                          <select class="form-control" name="cedula" required>
+                            <option value="">Seleccione una opcion</option>
+                            @foreach ($usuarios as $usuario)
+                              <option value="{{$usuario->id}}">{{$usuario->cedula}}</option>
+                            @endforeach
+                          </select>
                         </div>
+                      @endif
                         <div class="col col-sm-12">
                             <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false"
-                                aria-controls="collapseExample"><i class="pe-7s-refresh-2"></i> Cambiar planes</a>
+                                aria-controls="collapseExample"><i class="pe-7s-note"></i> Registrar planes</a>
                         </div>
                         <hr class="col-md-12">
                         <div class="collapse" id="form0">
@@ -30,6 +37,11 @@
                                     <label for="NombrePlan">Nombre del Plan</label>
                                     <input class="form-control" placeholder="Nombre del Plan" required name="NombrePlan"
                                         type="text" id="NombrePlan">
+                                    {{-- <select class="form-control" name="rol" required>
+                                        @foreach ($roles as $rol)
+                                        <option value="{{$rol->id}}">{{$rol->descripcion}}</option>
+                                        @endforeach
+                                    </select> --}}
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="Precio">Precio</label>

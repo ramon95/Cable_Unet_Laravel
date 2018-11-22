@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth']],function(){
     'as'    =>  'planCanalCrear'
   ]);
   // Ruta par editar los planes de canal
-  Route::put('canalEditar/{id}',[
+  Route::put('planCanalEditar/{id}',[
     'uses'  =>  'PlanCanalController@editar',
     'as'    =>  'planCanalEditar'
   ]);
@@ -89,7 +89,7 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'InternetController@borrar',
     'as'    =>  'internetBorrar'
   ]);
-  ///////////////////////////////////////////////////////////////////////Telefonia///////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////Telefonia//////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Rutas de Telefonia
   // Ruta de los planes de telefonia
@@ -112,7 +112,7 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'TelefoniaController@borrar',
     'as'    =>  'telefoniaBorrar'
   ]);
-  /////////////////////////////////////////////////////////////////////////Usuarios//////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////Usuarios/////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Rutas de Usuario
   // Ruta de Usuario
@@ -135,47 +135,27 @@ Route::group(['middleware' => ['auth']],function(){
     'uses'  =>  'UsuarioController@borrar',
     'as'    =>  'usuarioBorrar'
   ]);
-  /////////////////////////////////////////////////////////////////////////Registros//////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////Planes////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Rutas de Registrar
-  // Ruta de Registrar
-  Route::get('registrar',[
-    'uses'  =>  'RegistroController@index',
-    'as'    =>  'registrar'
+  // Rutas de Planes
+  // Ruta de Planes
+  Route::get('servicio',[
+    'uses'  =>  'ServicioController@index',
+    'as'    =>  'servicio'
   ]);
-  // Route::get('registrar','RegistroController@index')->name('registrar');
-  // Ruta para crear registros
-  Route::post('registroCrear',[
-    'uses'  =>  'RegistroController@crear',
-    'as'    =>  'registroCrear'
+  // Ruta para crear un servicio
+  Route::post('servicioCrear',[
+    'uses'  =>  'ServicioController@crear',
+    'as'    =>  'servicioCrear'
   ]);
-  /////////////////////////////////////////////////////////////////////////Cambios//////////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Rutas de Cambio
-  // Ruta de Cambio
-  // Route::get('cambio',[
-  //   'uses'  =>  'CambioController@index',
-  //   'as'    =>  'cambio'
-  // ]);
-  Route::get('cambio','CambioController@index')->name('cambio');
-  // Ruta par editar los planes
-  Route::put('cambioEditar/{id}',[
-    'uses'  =>  'CambioController@editar',
-    'as'    =>  'cambioEditar'
+  // Ruta par editar los servicios
+  Route::put('servicioEditar/{id}',[
+    'uses'  =>  'ServicioController@editar',
+    'as'    =>  'servicioEditar'
   ]);
-  // Ruta para eliminar los planes
-  Route::get('cambioEliminar/{id}',[
-    'uses'  =>  'CambioController@borrar',
-    'as'    =>  'cambioBorrar'
+  // Ruta para eliminar los servicios
+  Route::get('servicioEliminar/{id}',[
+    'uses'  =>  'ServicioController@borrar',
+    'as'    =>  'servicioBorrar'
   ]);
-  /////////////////////////////////////////////////////////////////////////Factura//////////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Rutas de Factura
-  // Ruta de Factura
-  // Route::get('factura',[
-  //   'uses'  =>  'FacturaController@index',
-  //   'as'    =>  'factura'
-  // ]);
-  Route::get('factura','FacturaController@index')->name('factura');
-
 });

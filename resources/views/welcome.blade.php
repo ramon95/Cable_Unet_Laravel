@@ -89,22 +89,22 @@
                         <i class="pe-7s-users"></i>
                         <p>Usuarios</p>
                       </a>
-                    </li>                    
+                    </li>
                   @endif
                   <li>
-                    <a href="{{route('registrar')}}">
+                    <a href="{{route('servicio')}}">
                     <i class="pe-7s-note"></i>
                     <p>Registrar Planes</p>
                     </a>
                   </li>
                   <li>
-                    <a href="{{route('cambio')}}">
+                    <a href="#">
                     <i class="pe-7s-refresh-2"></i>
                     <p>Cambio de planes</p>
                     </a>
                   </li>
                   <li>
-                    <a href="{{route('factura')}}">
+                    <a href="#">
                     <i class="pe-7s-piggy"></i>
                     <p>Factuacion</p>
                     </a>
